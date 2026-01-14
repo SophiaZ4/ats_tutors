@@ -155,7 +155,7 @@ h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 40px; }
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     padding: 20px 0;        
     gap: 30px;
-    max-width: 1300px; /* Limits the max width so they don't get TOO long on huge monitors */
+    max-width: 1000px; /* Limits the max width so they don't get TOO long on huge monitors */
     margin: 0 auto;
 }
 
