@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aim To Soar Tutors | 500 Error</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow: hidden; /* Prevent scrolling */
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        canvas {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .error-message {
+            margin-bottom: 20px;
+        }
+        .error-message h1 {
+            font-size: 2.5rem;
+            color: var(--dark);
+        }
+        .error-message p {
+            font-size: 1.2rem;
+            color: var(--gray);
+        }
+        footer {
+            width: 100%;
+        }
+        .mobile-controls {
+            display: none; /* Hidden by default */
+            margin-top: 20px;
+        }
+        .mobile-controls button {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        @media (max-width: 600px) {
+            .mobile-controls {
+                display: block; /* Show on mobile */
+            }
+            .error-message h1 {
+                font-size: 2rem;
+            }
+            .error-message p {
+                font-size: 1rem;
+            }
+            canvas {
+                width: 90%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="ATS Logo" class="logo">
+        </nav>
+    </header>
+
+    <div class="content">
+        <div class="error-message">
+            <h1>Oops! Something went wrong.</h1>
+            <p>We've encountered an unexpected error. While we fix it, enjoy a game of snake!</p>
+        </div>
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <div class="mobile-controls">
+            <div>
+                <button onclick="setDirection('UP')">▲</button>
+            </div>
+            <div>
+                <button onclick="setDirection('LEFT')">◄</button>
+                <button onclick="setDirection('RIGHT')">►</button>
+            </div>
+            <div>
+                <button onclick="setDirection('DOWN')">▼</button>
+            </div>
+        </div>
+    </div>
+
+    <footer id="more">
+        <p>You can also contact us at:</p>
+        <p>📧 Email: aimtosoartutors@gmail.com</p>
+        <p>&copy; 2026 Aim To Soar Tutors</p>
+    </footer>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const box = 20;
+        let snake = [];
+        snake[0] = { x: 10 * box, y: 10 * box };
+
+        let food = {
+            x: Math.floor(Math.random() * 20) * box,
+            y: Math.floor(Math.random() * 20) * box
+        };
+
+        let score = 0;
+        let d;
+
+        document.addEventListener('keydown', direction);
+
+        function direction(event) {
+            if (event.keyCode == 37 && d != 'RIGHT') {
+                d = 'LEFT';
+                event.preventDefault();
+            } else if (event.keyCode == 38 && d != 'DOWN') {
+                d = 'UP';
+                event.preventDefault();
+            } else if (event.keyCode == 39 && d != 'LEFT') {
+                d = 'RIGHT';
+                event.preventDefault();
+            } else if (event.keyCode == 40 && d != 'UP') {
+                d = 'DOWN';
+                event.preventDefault();
+            }
+        }
+
+        function setDirection(dir) {
+            if (dir == 'LEFT' && d != 'RIGHT') {
+                d = 'LEFT';
+            } else if (dir == 'UP' && d != 'DOWN') {
+                d = 'UP';
+            } else if (dir == 'RIGHT' && d != 'LEFT') {
+                d = 'RIGHT';
+            } else if (dir == 'DOWN' && d != 'UP') {
+                d = 'DOWN';
+            }
+        }
+
+        function collision(head, array) {
+            for (let i = 0; i < array.length; i++) {
+                if (head.x == array[i].x && head.y == array[i].y) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < snake.length; i++) {
+                ctx.fillStyle = (i == 0) ? '#3b82f6' : '#60a5fa';
+                ctx.fillRect(snake[i].x, snake[i].y, box, box);
+
+                ctx.strokeStyle = '#f0f0f0';
+                ctx.strokeRect(snake[i].x, snake[i].y, box, box);
+            }
+
+            ctx.fillStyle = '#ef4444';
+            ctx.fillRect(food.x, food.y, box, box);
+
+            let snakeX = snake[0].x;
+            let snakeY = snake[0].y;
+
+            if (d == 'LEFT') snakeX -= box;
+            if (d == 'UP') snakeY -= box;
+            if (d == 'RIGHT') snakeX += box;
+            if (d == 'DOWN') snakeY += box;
+
+            if (snakeX == food.x && snakeY == food.y) {
+                score++;
+                food = {
+                    x: Math.floor(Math.random() * 20) * box,
+                    y: Math.floor(Math.random() * 20) * box
+                };
+            } else {
+                if (snake.length > 1) {
+                    snake.pop();
+                }
+            }
+
+            let newHead = {
+                x: snakeX,
+                y: snakeY
+            };
+
+            if (snakeX < 0 || snakeY < 0 || snakeX >= canvas.width || snakeY >= canvas.height || collision(newHead, snake)) {
+                clearInterval(game);
+                snake = [];
+                snake[0] = { x: 10 * box, y: 10 * box };
+                d = undefined;
+                game = setInterval(draw, 100);
+            }
+
+            if(d) {
+                snake.unshift(newHead);
+            }
+        }
+
+        let game = setInterval(draw, 100);
+    </script>
+
+</body>
+</html>

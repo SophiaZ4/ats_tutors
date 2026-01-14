@@ -1,0 +1,6 @@
+.project/
+ats_tutors/.project/
+.DS_Store
+__pycache__/
+*.log
+.env

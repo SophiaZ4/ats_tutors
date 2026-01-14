@@ -1,0 +1,7 @@
+.env
+*.pyc
+debug_run.log
+.project/__pycache__/
+.project/*.log
+.project/server.log.lxp
+app.log

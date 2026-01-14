@@ -1,0 +1,25 @@
+<logexpert>
+  <file fileName="debug.log" lineCount="0">
+    <bookmarks />
+    <rowheights />
+    <options>
+      <multifile enabled="0" pattern="*$J(.)" maxDays="3" />
+      <currentline line="-1" />
+      <firstDisplayedLine line="-1" />
+      <filter visible="0" advanced="0" position="486" />
+      <bookmarklist visible="0" position="300" />
+      <followTail enabled="1" />
+      <bookmarkCommentColumn visible="0" />
+      <filterSaveList visible="0" />
+    </options>
+    <tab name="debug.log" />
+    <columnizer name="Default (single line)" />
+    <highlightGroup name="" />
+    <filters>
+      <filter>
+        <params>eyJTZWFyY2hUZXh0IjoiIiwiUmFuZ2VTZWFyY2hUZXh0IjpudWxsLCJJc0Nhc2VTZW5zaXRpdmUiOmZhbHNlLCJJc0ZpbHRlclRhaWwiOnRydWUsIkZ1enp5VmFsdWUiOjAsIkVtcHR5Q29sdW1uVXNlUHJldiI6ZmFsc2UsIkVtcHR5Q29sdW1uSGl0IjpmYWxzZSwiRXhhY3RDb2x1bW5NYXRjaCI6ZmFsc2UsIkNvbHVtblJlc3RyaWN0IjpmYWxzZSwiQ29sb3IiOnsiUiI6MCwiRyI6MCwiQiI6MCwiQSI6MCwiSXNLbm93bkNvbG9yIjpmYWxzZSwiSXNFbXB0eSI6dHJ1ZSwiSXNOYW1lZENvbG9yIjpmYWxzZSwiSXNTeXN0ZW1Db2xvciI6ZmFsc2UsIk5hbWUiOiIwIn0sIlNwcmVhZEJlZm9yZSI6MCwiU3ByZWFkQmVoaW5kIjowLCJJc0ludmVydCI6ZmFsc2UsIklzUmFuZ2VTZWFyY2giOmZhbHNlLCJJc1JlZ2V4IjpmYWxzZSwiQ29sdW1uTGlzdCI6W10sIklzSW5SYW5nZSI6ZmFsc2UsIkxhc3RMaW5lIjoiIiwiTGFzdE5vbkVtcHR5Q29scyI6e30sIkxhc3RSZXN1bHQiOmZhbHNlLCJSYW5nZVJleCI6bnVsbCwiUmV4IjpudWxsfQ==</params>
+      </filter>
+    </filters>
+    <encoding name="utf-8" />
+  </file>
+</logexpert>

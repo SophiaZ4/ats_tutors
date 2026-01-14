@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aim To Soar Tutors | Aim high, Soar further.</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logor.png') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <img src="{{ url_for('static', filename='images/logor.png') }}" alt="ATS Logo" class="logo">
+            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">
+                &#9776;
+            </button>
+            <ul id="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#locations">Locations</a></li>
+                <li><a href="#subjects">Subjects</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact-section">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        
+        <h1>Expert K-12 Tutoring for <br><span class="blue"> Academic Excellence</span></h1>
+        
+        <p class="hero-subtext">Our team of distinguished HSC achievers work to help students reach their own academic goals.</p>
+        
+        <div class="hero-buttons">
+            <a href="#contact-section" class="btn btn-primary">Start Your Journey →</a>
+            <a href="#subjects" class="btn btn-secondary">Explore Subjects</a>
+        </div>
+        
+        <div class="hero-badges">
+            <div class="badge">
+                <span class="badge-title">94+</span>
+                <span class="badge-text">ATAR Tutors</span>
+            </div>
+            <div class="badge">
+                <span class="badge-title">Distinguished</span>
+                <span class="badge-text">Achievers</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews-section">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Our Reviews</h2>
+
+        <div class="reviews-grid">
+            <!--<div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Sophia kept my son engaged and brought his English back up to a year 5 level."</p>
+                <span class="reviewer">- Parent of Thomas (Year 4), East Ryde</span>
+            </div>-->
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"I highly recommend Sophia and Amelia. They are high-achieving tutors with excellent ATAR results who take a genuine interest in their students' progress. Great quality support and at a reasonable price too!"</p>
+                <span class="reviewer">- Parent of Julia (Year 10), North Ryde</span>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"The package deal for 10 lessons is great value. Very professional and reliable service."</p>
+                <span class="reviewer">- Parent of Anthony (Year 10), Castle Cove</span>
+            </div>
+        </div>
+
+        <div class="review-btn-container">
+        <a href="https://g.page/r/CfjhE-A3N4O3EBM/review" target="_blank" class="btn btn-secondary google-btn">
+            Leave a Review on Google
+        </a>
+    </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2>Our Services</h2>
+        <p>Welcome to Aim To Soar Tutors. We offer a variety of subjects and levels of tutoring for success.</p>
+        <div class="about-flex">
+            <ul class="about-list">
+                <li>Online and in-person lessons</li>
+                <li>Flexible scheduling to suit your needs</li>
+                <li>HSC and Naplan preparation resources and specialised lessons</li>
+                <li>Junior and Primary subjects including English, Mathematics and Science.</li>
+                <li>A Range of HSC STEM and HSIE subjects from top tutors</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="locations" class="container bg-light">
+        <h2>Our Locations</h2>
+        <div class="location-grid">
+            <div class="location-group">
+                <p>Northern Beaches • Inner West • Chatswood</p>
+                <p>Ryde • Gladesville • Castle Cove</p>
+            </div>
+            <p class="online-tag">And Online Everywhere</p>
+        </div>
+    </section>
+
+    <section id="subjects" class="container bg-light">
+    <h2>Meet Our Tutors</h2>
+    <div class="grid">
+        <div class="card tutor-card">
+            <h3>Sophia Zammit</h3>
+            <p class="tutor-bio">Studying Computer Science at UTS (2026). Passionate about STEM with experience tutoring Primary School students.</p>
+
+            <ul class="subject-list">
+                <li><strong>Software Engineering</strong> (Band 6, 93)</li>
+                <li>Physics</li>
+                <li>Math Extension 1</li>
+                <li>Math Advanced & Standard</li>
+            </ul>
+        </div>
+
+        <div class="card tutor-card">
+            <h3>Amelia Sawakid</h3>
+            <p class="tutor-bio">Studying Law at UNSW (2026). Highly motivated in HSIE with great resources for Legal and Business Studies.</p>
+
+            <ul class="subject-list">
+                <li><strong>Business Studies</strong>  (Band 6, 95)</li>
+                <li><strong>Legal Studies</strong>  (Band 6, 94)</li>
+                <li><strong>SOR II</strong>  (Band 6, 92)</li>
+                <li>English Advanced & Standard</li>
+            </ul>
+        </div>
+    </div>
+    </section>
+
+    <section id="pricing" class="container">
+        <h2>Pricing Plans</h2>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <span class="tag blue-tag">HSC</span>
+                <h3>Years 11 - 12</h3>
+                <div class="price">$50<span>/hr</span></div>
+                <hr>
+                <p><strong>Package Deal:</strong></p>
+                <p>$450 for 10 lessons</p>
+                <p class="savings">(Get 1 lesson FREE)</p>
+            </div>
+
+            <div class="price-card">
+                <span class="tag blue-tag">Junior High School</span>
+                <h3>Years 7 - 10</h3>
+                <div class="price">$40<span>/hr</span></div>
+                <hr>
+                <p><strong>Package Deal:</strong></p>
+                <p>$370 for 10 lessons</p>
+                <p class="savings">(Save $30)</p>
+            </div>
+
+            <div class="price-card">
+                <span class="tag blue-tag">Primary</span>
+                <h3>Years K - 6</h3>
+                <div class="price">$30<span>/hr</span></div>
+                <hr>
+                <p><strong>Package Deal:</strong></p>
+                <p>$250 for 10 lessons</p>
+                <p class="savings">(Save $50)</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-section" class="container">
+        <h2>Contact</h2>
+        <p>Send us a message and we'll match you with the perfect tutor.</p>
+        
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <div class="form-container">
+            <form id="contactForm" action="/send_message" method="POST">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell us about the student's year level and subjects..." required></textarea>
+                </div>
+                <button type="submit" id="submitBtn" class="btn btn-primary submit-btn">
+                    <span id="btnText">Send Message →</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+    document.getElementById('contact-section').onsubmit = function() {
+        var btn = document.getElementById('submitBtn');
+        var btnText = document.getElementById('btnText');
+        
+        // Disable button to prevent multiple clicks
+        btn.disabled = true;
+        btn.style.opacity = '0.7';
+        btn.style.cursor = 'not-allowed';
+        
+        // Provide visual feedback
+        btnText.innerHTML = "Sending... Please wait";
+        
+        return true;
+    };
+    </script>
+
+    <footer id="more">
+        <h2>More Info</h2>
+        <p>📍 Location: North West Sydney (and Online)</p>
+        <p>📧 Email: aimtosoartutors@gmail.com</p>
+
+        <div class="social-links">
+        <a href="https://www.linkedin.com/company/aim-to-soar-tutors/" target="_blank" class="social-btn linkedin">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://www.tiktok.com/@aim.to.soar.tutor" target="_blank" class="social-btn tiktok">
+            <i class="fab fa-tiktok"></i> TikTok
+        </a>
+        </div>
+
+        <p>&copy; 2026 Aim To Soar Tutors</p>
+    </footer>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        });
+        
+        // Close menu when a link is clicked
+        document.querySelectorAll('#nav-menu li a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-menu').classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
