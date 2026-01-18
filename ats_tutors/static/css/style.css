@@ -50,6 +50,24 @@ nav ul li { margin-left: 25px; }
 nav ul li a { text-decoration: none; color: var(--dark); font-weight: bold; }
 nav ul li a:hover { color: var(--blue); }
 
+/* Base button style for the nav link */
+nav ul li a.nav-btn {
+    background: var(--blue);
+    color: white !important; /* Forces text to stay white */
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+    display: inline-block; /* Allows padding to work correctly */
+    margin-top: -5px; /* Vertical adjustment to align with other links */
+}
+
+/* Hover effect for the nav button */
+nav ul li a.nav-btn:hover {
+    background: #2563eb; /* Slightly darker blue */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -511,6 +529,17 @@ footer { background: var(--dark); color: white; padding: 60px 10%; text-align: c
     /* Show menu when active */
     nav ul.active {
         display: flex;
+    }
+    /* Adjust button appearance inside the mobile hamburger menu */
+    nav ul.active li {
+        padding: 10px 0;
+    }
+
+    nav ul.active li a.nav-btn {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 80%; /* Don't take full width on mobile menu for better look */
+        text-align: center;
     }
 
     nav ul li {
