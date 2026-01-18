@@ -1,0 +1,1 @@
+ssh sds sudo /usr/local/bin/docker exec atstutors-dev /root/restart_server.sh

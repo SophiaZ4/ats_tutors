@@ -4,11 +4,13 @@ try:
     from flask_wtf.csrf import CSRFProtect
     from flask_limiter import Limiter
     from flask_limiter.util import get_remote_address
+    from flask import request, redirect
     from werkzeug.middleware.proxy_fix import ProxyFix  # <--- NEW: Required for Docker
     import os
     import traceback  # <--- NEW: To show crash logs
     from dotenv import load_dotenv
     import logging
+
 
     # Configure logging
     logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s:%(message)s')
@@ -35,6 +37,13 @@ try:
         default_limits=["200 per day", "50 per hour"],
         storage_uri="memory://"
     )
+
+    @app.before_request
+    def force_https():
+        # If the proxy says the connection isn't secure, force the redirect
+        if not request.is_secure and app.env != 'development':
+            url = request.url.replace('http://', 'https://', 1)
+            return redirect(url, code=301)
 
     # Security: HTTP Headers
     @app.after_request
