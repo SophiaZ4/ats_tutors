@@ -44,7 +44,7 @@ try:
         response.headers['X-Frame-Options'] = 'SAMEORIGIN'
         response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
         response.headers['X-XSS-Protection'] = '1; mode=block'
-        response.headers['Referrer-Policy'] = 'strict-origin-when-cross-origin'
+        response.headers['Referrer-Policy'] = 'no-referrer-when-downgrade'
         return response
 
     # Gmail Configuration
